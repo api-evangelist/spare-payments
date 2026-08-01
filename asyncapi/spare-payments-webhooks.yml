@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: searched
+source: https://sparepayments.notion.site/API-Documentation-22eb891ffdf84651aacebc3a6459b686
+spec_type: Webhooks
+api: Spare API
+summary: >-
+  Spare sends webhooks as JSON over HTTP POST to a customer-configured endpoint
+  whenever a matching event (topic) occurs in Spare — e.g. a purchase is made or
+  a user enters/leaves the organization — so external systems (inventory,
+  attendance) can react in near real time. Webhooks are the only publicly
+  documented part of the Spare API surface; the REST API itself has not been
+  opened to the public yet.
+delivery:
+  transport: https-post
+  content_type: application/json
+  configuration: >-
+    Created in the Spare Admin Panel (Settings > Webhooks) by an administrator:
+    Name/description, Topic (the triggering event), destination URL, and an
+    optional Authorization HTTP header secret.
+  authentication:
+    style: shared-secret-header
+    header: Authorization
+    description: >-
+      An optional Authorization HTTP header carrying a caller-defined secret is
+      sent with each webhook; the receiver validates the secret to confirm the
+      request came from Spare and not a malicious source.
+  ip_allowlisting: >-
+    Recommended defense — allowlist Spare's IP addresses so only Spare can reach
+    the webhook endpoint.
+webhook:
+  components:
+  - name: URL
+    description: The endpoint where Spare sends event payloads when a matching event happens.
+  - name: Topic
+    description: The event that triggers the webhook.
+  - name: Authorization
+    description: An HTTP header carrying a secret so the receiver can verify the caller is Spare.
+topics:
+  note: >-
+    Topics are documented as a table in the Spare Webhooks docs and are organized
+    around Spare's resource entities (create/update/delete-style events per
+    resource). The exact topic-string enumeration is published in the Topics
+    table of the Webhooks documentation page; it was not machine-enumerable from
+    the public Notion database and is intentionally not reproduced here to avoid
+    fabrication.
+  resource_domains:
+  - Core (Admin, Organization, Merchant, User, Child, Cashier, Branch, Tender, Peripheral, Currency)
+  - Inventory (Product, Product Category, Menu Section, Bundle, Coupon)
+  - Attendance (Gate, Guardian)
+  example_use_cases:
+  - Notify an Inventory Tracking System to update branch stock every time a user makes a purchase.
+  - Notify an Attendance Tracking System every time a user enters or leaves the organization.
+docs: https://sparepayments.notion.site/API-Documentation-22eb891ffdf84651aacebc3a6459b686

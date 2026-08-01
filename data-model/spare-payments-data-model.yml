@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: searched
+source: https://sparepayments.notion.site/API-Documentation-22eb891ffdf84651aacebc3a6459b686 (Resources)
+api: Spare API
+summary: >-
+  Entity model of the Spare school-payments platform, transcribed from the
+  "List of Resources" in the Spare API/Webhooks documentation. Grouped into
+  three domains: Core (identity, org, payment tender), Inventory (catalog), and
+  Attendance. Field-level relationships are documented per-resource in the docs
+  but are not fully machine-readable from the public page; entities and their
+  domain grouping are captured here without inventing foreign keys.
+conventions:
+  boolean: Represented as an integer with a value of 0 or 1.
+  optional_fields: A '?' prefix on a field's type marks it optional; its value may be null.
+  date: A string in ISO 8601 format, UTC time zone.
+domains:
+- name: Core
+  entities:
+  - Admin
+  - Organization
+  - Merchant
+  - User
+  - Child
+  - Cashier
+  - Branch
+  - Tender
+  - Peripheral
+  - Currency
+- name: Inventory
+  entities:
+  - Product
+  - Product Category
+  - Menu Section
+  - Bundle
+  - Coupon
+- name: Attendance
+  entities:
+  - Gate
+  - Guardian
+relationships:
+  note: >-
+    Individual resource pages document each entity's fields (including id
+    references such as organization, branch, user). The exact relationship
+    cardinalities were not fully enumerable from the public Notion database and
+    are intentionally left unmodeled rather than fabricated.
+docs: https://sparepayments.notion.site/API-Documentation-22eb891ffdf84651aacebc3a6459b686

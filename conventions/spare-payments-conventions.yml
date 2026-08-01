@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://sparepayments.notion.site/API-Documentation-22eb891ffdf84651aacebc3a6459b686
+api: Spare API
+summary: >-
+  Cross-cutting request/response conventions for the Spare API, transcribed from
+  the public API documentation. Note: the REST API has not been opened to the
+  public yet, so only high-level conventions and the webhook contract are
+  documented. Fields not published (pagination, idempotency, rate limits) are
+  recorded as unknown rather than assumed.
+transport:
+  protocol: HTTPS
+  style: REST
+  encoding: JSON
+  http: Standard HTTP response codes and verbs.
+data_types:
+  boolean: Integer 0 or 1.
+  optional: A '?' prefix on a type marks the field optional; value may be null.
+  date: ISO 8601 string in UTC.
+authentication:
+  api:
+    status: >-
+      Not public. Spare's REST API has not been opened to the public yet
+      ("Stay tuned!"), so no public authentication scheme is documented.
+  webhooks:
+    style: shared-secret-header
+    header: Authorization
+    description: Optional caller-defined secret sent with each webhook for receiver-side validation.
+    artifact: asyncapi/spare-payments-webhooks.yml
+idempotency:
+  supported: unknown
+  note: No idempotency contract is documented on the public API surface.
+pagination:
+  style: unknown
+  note: Not documented publicly (API not yet open).
+rate_limiting:
+  documented: false
+error_envelope:
+  documented: false
+  note: Error format not published on the public surface (API not yet open).
+cross_links:
+  webhooks: asyncapi/spare-payments-webhooks.yml
+  data_model: data-model/spare-payments-data-model.yml
+docs: https://sparepayments.notion.site/API-Documentation-22eb891ffdf84651aacebc3a6459b686

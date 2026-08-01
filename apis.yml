@@ -1,8 +1,28 @@
 aid: spare-payments
 name: Spare Payments
-description: Spare Payments is a company surfaced as a portfolio company of 500-global and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Spare (Spare L.L.C., paywithspare.com) is a school management and cashless-payments
+  platform that digitizes payments and automates internal school processes using
+  contactless technology — wristbands, phones, student ID cards, and QR codes. It
+  serves schools, parents, and vendors through a centralized admin dashboard with
+  permission controls, parent spending limits and dietary/allergen monitoring, vendor
+  inventory tools, and attendance tracking. Spare exposes a REST API (JSON over HTTPS,
+  standard HTTP verbs and status codes) that has not yet been opened to the public;
+  its webhook surface is publicly documented so external inventory and attendance
+  systems can react to Spare events in near real time. Backed by 500 Global.
 url: https://raw.githubusercontent.com/api-evangelist/spare-payments/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/227619477?v=4
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,9 +31,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Payments
+- Education
+- Schools
+- Cashless Payments
+- EdTech
+- Attendance
+- Webhooks
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +50,34 @@ maintainers:
 common:
 - type: Website
   url: https://paywithspare.com
+- type: Login
+  url: https://app.paywithspare.com
+- type: Documentation
+  url: https://sparepayments.notion.site
+- type: APIReference
+  url: https://sparepayments.notion.site/API-Documentation-22eb891ffdf84651aacebc3a6459b686
+- type: Support
+  url: https://paywithspare.com/school-support
+- type: TermsOfService
+  url: https://paywithspare.com/legal
+- type: PrivacyPolicy
+  url: https://paywithspare.com/legal
+- type: GitHubOrganization
+  url: https://github.com/sparepayments
+- type: ChangeLog
+  url: changelog/spare-payments-changelog.yml
+- type: Webhooks
+  url: asyncapi/spare-payments-webhooks.yml
+- type: DataModel
+  url: data-model/spare-payments-data-model.yml
+- type: Conventions
+  url: conventions/spare-payments-conventions.yml
+- type: DomainSecurity
+  url: security/spare-payments-domain-security.yml
+- type: LLMsTxt
+  url: llms/spare-payments-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1

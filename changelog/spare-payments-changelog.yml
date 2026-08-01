@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: searched
+source: https://sparepayments.notion.site/What-s-new-in-Spare-deacaef483e2442094aca9b384985af6
+api: Spare API
+summary: >-
+  Spare publishes a "What's new in Spare?" release feed in its Notion knowledge
+  base. It is maintained as a Notion database of dated entries; the individual
+  entries were not machine-enumerable from the public Notion collection, so this
+  artifact records the canonical changelog location rather than a fabricated
+  entry list.
+scheme: dated-entries
+url: https://sparepayments.notion.site/What-s-new-in-Spare-deacaef483e2442094aca9b384985af6
+entries: []
+entries_note: >-
+  See the live "What's new in Spare?" page for the authoritative dated entries;
+  the public Notion database could not be enumerated without fabrication.
